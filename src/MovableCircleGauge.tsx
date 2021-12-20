@@ -1,12 +1,11 @@
-import { StatusBar } from 'expo-status-bar';
+import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { PADDING } from './src/global/Constants';
-import MovableCircleGauge from './src/MovableCircleGauge';
+import { PADDING } from './global/Constants';
 
-export default function App() {
+export default function MovableCircleGauge() {
   return (
     <View style={styles.container}>
-      <MovableCircleGauge />
+      <Text>init</Text>
     </View>
   );
 }
@@ -14,7 +13,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
     padding: PADDING,
