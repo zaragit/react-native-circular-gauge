@@ -14,13 +14,13 @@ import { canvas2Polar, polar2Canvas, TAU, Vector } from 'react-native-redash';
 import { useGaugeContext } from '../context/GaugeContext';
 
 interface Props {
-  prevTheta: SharedValue<number>;
+  prevTheta?: SharedValue<number>;
   currentTheta: SharedValue<number>;
-  nextTheta: SharedValue<number>;
+  nextTheta?: SharedValue<number>;
   gestureTarget: SharedValue<{
-    prevTheta: SharedValue<number>;
+    prevTheta?: SharedValue<number>;
     currentTheta: SharedValue<number>;
-    nextTheta: SharedValue<number>;
+    nextTheta?: SharedValue<number>;
   } | null>;
 }
 

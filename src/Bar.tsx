@@ -14,9 +14,15 @@ interface Props {
   startTheta: SharedValue<number>;
   endTheta: SharedValue<number>;
   stroke?: string;
+  clockwise?: boolean;
 }
 
-function Bar({ startTheta, endTheta, stroke = '#EB5648' }: Props) {
+function Bar({
+  startTheta,
+  endTheta,
+  stroke = '#EB5648',
+  clockwise = false,
+}: Props) {
   const { R, CENTER, STROKE_WIDTH } = useGaugeContext();
 
   const position = (theta: SharedValue<number>) => {
@@ -34,7 +40,9 @@ function Bar({ startTheta, endTheta, stroke = '#EB5648' }: Props) {
 
   const arc = (x: number, y: number, large = false) => {
     'worklet';
-    return `A ${R} ${R} 0 ${large ? '1' : '0'} 0 ${x} ${y}`;
+    return `A ${R} ${R} 0 ${large ? '1' : '0'} ${
+      clockwise ? '1' : '0'
+    } ${x} ${y}`;
   };
 
   const startPosition = useDerivedValue(position(startTheta), [startTheta]);
@@ -50,7 +58,11 @@ function Bar({ startTheta, endTheta, stroke = '#EB5648' }: Props) {
         const theta = thetaBetweenStartAndEnd(startTheta.value, endTheta.value);
 
         return {
-          d: `M ${startX} ${startY} ${arc(endX, endY, theta > PI)}`,
+          d: `M ${startX} ${startY} ${arc(
+            endX,
+            endY,
+            clockwise ? theta < PI : theta > PI,
+          )}`,
         };
       })}
     />

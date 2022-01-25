@@ -2,6 +2,7 @@ import 'react-native-reanimated';
 import React, { useState } from 'react';
 import { Button, Dimensions, StyleSheet, Text, View } from 'react-native';
 import PercentGauge from './src/PercentGauge';
+import ScaleGauge from './src/ScaleGauge';
 
 const PADDING = 24;
 const WINDOW_WIDTH = Dimensions.get('window').width;
@@ -22,6 +23,7 @@ const pointerColors = [RED, BLUE, YELLOW];
 export default function App() {
   const [size, setSize] = useState(CIRCLE_SIZE);
   const [percents, setPercents] = useState([30, 50, 20]);
+  const [scale, setScale] = useState(40);
   const test = false;
 
   const [p1, p2, p3] = percents;
@@ -58,7 +60,7 @@ export default function App() {
             <Text>{p2}%</Text>
           </View>
         </View>
-        <PercentGauge
+        {/* <PercentGauge
           size={CIRCLE_SIZE}
           showScale={true}
           percent={percents}
@@ -67,6 +69,13 @@ export default function App() {
           onChange={(percents: number[]) => {
             setPercents(percents.map((percent) => Math.round(percent)));
           }}
+        /> */}
+        <ScaleGauge
+          size={CIRCLE_SIZE}
+          scale={scale}
+          onChange={(scale) => setScale(scale)}
+          getBarColor={() => barColors[1]}
+          getPointerColor={() => pointerColors[1]}
         />
         <View style={styles.percentageBox}>
           <View style={{ alignItems: 'center', justifyContent: 'center' }}>
