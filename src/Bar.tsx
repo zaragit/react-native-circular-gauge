@@ -6,7 +6,7 @@ import Animated, {
 } from 'react-native-reanimated';
 import { PI, polar2Canvas, TAU } from 'react-native-redash';
 import { Path } from 'react-native-svg';
-import { useGaugeContext } from '../context/GaugeContext';
+import { useGaugeContext } from './context/GaugeContext';
 
 const AnimatedPath = Animated.createAnimatedComponent(Path);
 

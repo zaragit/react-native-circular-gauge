@@ -11,7 +11,7 @@ import Animated, {
   useDerivedValue,
 } from 'react-native-reanimated';
 import { canvas2Polar, polar2Canvas, TAU, Vector } from 'react-native-redash';
-import { useGaugeContext } from '../context/GaugeContext';
+import { useGaugeContext } from './context/GaugeContext';
 
 interface Props {
   prevTheta?: SharedValue<number>;

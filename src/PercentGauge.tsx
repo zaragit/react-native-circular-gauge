@@ -12,7 +12,7 @@ import Animated, {
 } from 'react-native-reanimated';
 import { canvas2Polar, PI, TAU } from 'react-native-redash';
 import Svg, { Circle } from 'react-native-svg';
-import { GaugeContextProvider } from '../context/GaugeContext';
+import { GaugeContextProvider } from './context/GaugeContext';
 import Bar from './Bar';
 import Gesture from './Gesture';
 import Pointer from './Pointer';

@@ -1,7 +1,7 @@
 import React from 'react';
 import { PI, polar2Canvas, TAU } from 'react-native-redash';
 import { G, Line, Text } from 'react-native-svg';
-import { useGaugeContext } from '../context/GaugeContext';
+import { useGaugeContext } from './context/GaugeContext';
 
 interface Props {
   showText?: boolean;

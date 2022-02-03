@@ -11,7 +11,7 @@ import Animated, {
 } from 'react-native-reanimated';
 import { polar2Canvas } from 'react-native-redash';
 import { Circle } from 'react-native-svg';
-import { useGaugeContext } from '../context/GaugeContext';
+import { useGaugeContext } from './context/GaugeContext';
 
 const AnimatedCircle = Animated.createAnimatedComponent(Circle);
 
